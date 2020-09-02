@@ -10,13 +10,49 @@ import XCTest
 @testable import BowlingGame
 
 class BowlingGameTests: XCTestCase {
+    private var game: Game!
+    
+    override func setUp() {
+        super.setUp()
+        game = Game()
+    }
+    
+    override func tearDown() {
+        game = nil
+        super.tearDown()
+    }
+    
+    
+    
     func test_gutterGame() {
-        let sut = Game()
+        rollMany(pins: 0, times: 20)
         
-        for _ in 1...20 {
-            sut.roll(0)
+        XCTAssertEqual(game.score(), 0)
+    }
+    
+    func test_allOnes() {
+        rollMany(pins: 1, times: 20)
+        
+        XCTAssertEqual(game.score(), 20)
+    }
+    
+    func test_oneSpare() {
+        rollSpare()
+        game.roll(3)
+        rollMany(pins: 0, times: 17)
+        XCTAssertEqual(game.score(), 16)
+    }
+    
+    
+    // MARK:- Helpers
+    private func rollMany(pins: Int, times: Int) {
+        for _ in 1...times {
+            game.roll(pins)
         }
-        
-        XCTAssertEqual(sut.score(), 0)
+    }
+    
+    private func rollSpare() {
+        game.roll(5)
+        game.roll(5)
     }
 }
