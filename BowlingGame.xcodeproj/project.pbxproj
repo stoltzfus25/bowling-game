@@ -10,6 +10,7 @@
 		7EA6583C24FFF8C600CEB799 /* BowlingGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA6583224FFF8C600CEB799 /* BowlingGame.framework */; };
 		7EA6584124FFF8C600CEB799 /* BowlingGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6584024FFF8C600CEB799 /* BowlingGameTests.swift */; };
 		7EA6584324FFF8C600CEB799 /* BowlingGame.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA6583524FFF8C600CEB799 /* BowlingGame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA6584D24FFFA3000CEB799 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6584C24FFFA3000CEB799 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		7EA6583B24FFF8C600CEB799 /* BowlingGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlingGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA6584024FFF8C600CEB799 /* BowlingGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameTests.swift; sourceTree = "<group>"; };
 		7EA6584224FFF8C600CEB799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EA6584C24FFFA3000CEB799 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		7EA6583424FFF8C600CEB799 /* BowlingGame */ = {
 			isa = PBXGroup;
 			children = (
+				7EA6584C24FFFA3000CEB799 /* Game.swift */,
 				7EA6583524FFF8C600CEB799 /* BowlingGame.h */,
 				7EA6583624FFF8C600CEB799 /* Info.plist */,
 			);
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					7EA6583124FFF8C600CEB799 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 					7EA6583A24FFF8C600CEB799 = {
 						CreatedOnToolsVersion = 11.6;
@@ -195,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EA6584D24FFFA3000CEB799 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +344,7 @@
 		7EA6584724FFF8C600CEB799 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -355,6 +361,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.superiorplasticproducts.BowlingGame;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -362,6 +369,7 @@
 		7EA6584824FFF8C600CEB799 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -385,6 +393,7 @@
 		7EA6584A24FFF8C600CEB799 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BowlingGameTests/Info.plist;
@@ -402,6 +411,7 @@
 		7EA6584B24FFF8C600CEB799 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BowlingGameTests/Info.plist;
