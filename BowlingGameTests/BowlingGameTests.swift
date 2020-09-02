@@ -43,6 +43,13 @@ class BowlingGameTests: XCTestCase {
         XCTAssertEqual(game.score(), 16)
     }
     
+    func test_oneStrike() {
+        rollStrike()
+        game.roll(3)
+        game.roll(4)
+        rollMany(pins: 0, times: 16)
+        XCTAssertEqual(game.score(), 24)
+    }
     
     // MARK:- Helpers
     private func rollMany(pins: Int, times: Int) {
@@ -54,5 +61,9 @@ class BowlingGameTests: XCTestCase {
     private func rollSpare() {
         game.roll(5)
         game.roll(5)
+    }
+    
+    private func rollStrike() {
+        game.roll(10)
     }
 }
