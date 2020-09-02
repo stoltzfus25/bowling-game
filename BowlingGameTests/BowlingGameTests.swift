@@ -22,8 +22,6 @@ class BowlingGameTests: XCTestCase {
         super.tearDown()
     }
     
-    
-    
     func test_gutterGame() {
         rollMany(pins: 0, times: 20)
         
@@ -40,6 +38,7 @@ class BowlingGameTests: XCTestCase {
         rollSpare()
         game.roll(3)
         rollMany(pins: 0, times: 17)
+        
         XCTAssertEqual(game.score(), 16)
     }
     
@@ -48,7 +47,14 @@ class BowlingGameTests: XCTestCase {
         game.roll(3)
         game.roll(4)
         rollMany(pins: 0, times: 16)
+        
         XCTAssertEqual(game.score(), 24)
+    }
+    
+    func test_perfectGame() {
+        rollMany(pins: 10, times: 12)
+        
+        XCTAssertEqual(game.score(), 300)
     }
     
     // MARK:- Helpers
